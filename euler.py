@@ -5,6 +5,11 @@ from math import sqrt, floor
 def get_int_input(): return int(input().strip())
 
 
+def get_list_of_ints_input():
+    inputs = input().strip().split()
+    return list(map(lambda x: int(x), inputs))
+
+
 def sum_natural_numbers_below(x):
     """
     Get the sum of all numbers below x.
