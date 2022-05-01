@@ -86,3 +86,29 @@ def factorize(number):
             return possible_factor + 2, number // (possible_factor + 2)
 
     return number,
+
+
+def is_prime(number):
+    """
+    Checks if a number is prime.
+
+    >>> is_prime(0)
+    False
+    >>> is_prime(1)
+    False
+    >>> is_prime(2)
+    True
+    >>> is_prime(15)
+    False
+    >>> is_prime(200)
+    False
+    >>> is_prime(209)
+    False
+    >>> is_prime(25)
+    False
+    >>> is_prime(104729)
+    True
+    >>> is_prime(179424673)
+    True
+    """
+    return number != 1 and len(factorize(number)) == 1
