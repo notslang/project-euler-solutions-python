@@ -1,23 +1,5 @@
 #!/bin/python3
-
-import sys
-
-
-def get_int_input(): return int(input().strip())
-
-
-def unit_sum(x):
-    """
-    Get the sum of all numbers below x.
-
-    >>> unit_sum(3)
-    6
-
-    >>> unit_sum(100)
-    5050
-    """
-    # use integer division by 2 to avoid rounding errors on large numbers
-    return int((x * (x + 1)) // 2)
+from euler import get_int_input, sum_natural_numbers_below
 
 
 def sum_of_multiples_below(max_result, multiplier):
@@ -31,7 +13,7 @@ def sum_of_multiples_below(max_result, multiplier):
     5
     """
     # this is the same as sum(range(0, max_result, multiplier)), but faster
-    return unit_sum((max_result - 1) // multiplier) * multiplier
+    return sum_natural_numbers_below((max_result - 1) // multiplier) * multiplier
 
 
 def handle_test_case(n):

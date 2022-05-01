@@ -1,9 +1,5 @@
 #!/bin/python3
-
-import sys
-
-
-def get_int_input(): return int(input().strip())
+from euler import get_int_input
 
 
 def fib_generator(ceiling):

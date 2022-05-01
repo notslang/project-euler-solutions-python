@@ -1,24 +1,5 @@
 #!/bin/python3
-
-import sys
-
-
-def get_int_input(): return int(input().strip())
-
-
-def unit_sum(x):
-    """
-    Get the sum of all numbers below x.
-    Example: (1 + 2 + 3)
-
-    >>> unit_sum(3)
-    6
-
-    >>> unit_sum(100)
-    5050
-    """
-    # use integer division by 2 to avoid rounding errors on large numbers
-    return (x * (x + 1)) // 2
+from euler import get_int_input, sum_natural_numbers_below
 
 
 def sum_of_squares(x):
@@ -42,7 +23,7 @@ def handle_test_case(n):
     >>> handle_test_case(10)
     2640
     """
-    return (unit_sum(n) ** 2) - sum_of_squares(n)
+    return (sum_natural_numbers_below(n) ** 2) - sum_of_squares(n)
 
 
 if __name__ == '__main__':
