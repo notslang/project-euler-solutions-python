@@ -117,3 +117,32 @@ def is_prime(number):
     True
     """
     return number != 1 and len(factorize(number)) == 1
+
+
+def get_next_prime(number):
+    """
+    Find the next prime that comes after a given number.
+
+    >>> get_next_prime(0)
+    2
+    >>> get_next_prime(1)
+    2
+    >>> get_next_prime(4)
+    5
+    >>> get_next_prime(104723)
+    104729
+    """
+    if number == 1 or (number % 2 == 0 and number != 0):
+        # primes above 2 cannot be even and 1 isn't a prime
+        number += 1
+    else:
+        # don't return the same number if given a prime
+        number += 2
+
+    # as of 2017-10-02, the largest known prime gap is 1510, so this loop will
+    # probably never run more than 755 times for the inputs we're giving it.
+    while not is_prime(number):
+        # 2 is the smallest prime gap, and all prime gaps other than the gap
+        # between 2 & 3 are even.
+        number += 2
+    return number
